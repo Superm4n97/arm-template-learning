@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+  "handler": "Microsoft.Azure.CreateUIDef",
+  "version": "0.1.2-preview",
+  "parameters": {
+    "config": {
+      "isWizard": false,
+      "basics": {
+        "description": "Customized description with **markdown**, see [more](https://www.microsoft.com).",
+        "location": {
+          "label": "Custom label for location",
+          "toolTip": "provide a useful tooltip",
+          "resourceTypes": [
+            "Microsoft.Compute/virtualMachines"
+          ],
+          "allowedValues": [
+            "eastus",
+            "westus2"
+          ],
+          "visible": true
+        },
+        "applicationName": {
+          "label": "Application Name",
+          "toolTip": "provide a useful tooltip",
+          "resourceTypes": [
+            "Microsoft.Compute/virtualMachines"
+          ],
+          "allowedValues": [
+            "eastus",
+            "westus2"
+          ],
+          "visible": true
+        }
+      }
+    },
+    "basics": [
+      {}
+    ],
+    "steps": [
+      {}
+    ],
+    "outputs": {
+      "name": "[config('basics').location]",
+      "location": "[location()]"
+    }
+  }
+}
